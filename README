@@ -1,0 +1,10 @@
+libhalfmk61
+
+USSR programmable calculator MK-61 notprogrammable subsystem only (stack and
+registers + operations)
+
+It can be useful for port soft from MK-61 to PC or for RPN math with 5
+operational registers.
+
+License: GNU GPLv3
+Author: Artem Kurashov
