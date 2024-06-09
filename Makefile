@@ -9,7 +9,7 @@ ifeq ($(libdir),)
 endif
 all:
 	$(CXX) -c -fPIC $(CXXFLAGS) -o halfmk61.o halfmk61.cpp
-	$(CXX) -fPIC -shared $(CXXFLAGS) g++ -fPIC -shared -o libhalfmk61.so.1 halfmk61.o
+	$(CXX) -fPIC -shared $(CXXFLAGS) -o libhalfmk61.so.1 halfmk61.o
 	ln -s libhalfmk61.so.1 libhalfmk61.so
 install:
 	install -pDm644 libhalfmk61.so $(DESTDIR)$(libdir)/libhalfmk61.so

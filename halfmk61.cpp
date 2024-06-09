@@ -1,5 +1,5 @@
 /*
- * libhalfmk61 v 0.2
+ * libhalfmk61 v 0.3
  *
  * USSR programmable calculator MK-61 notprogrammable subsystem only
  *				(stack and registers + operations)
