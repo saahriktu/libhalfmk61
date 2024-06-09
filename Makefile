@@ -1,7 +1,19 @@
+ifeq ($(prefix),)
+	prefix=/usr
+endif
+ifeq ($(shell which $(CXX)),)
+	CXX=g++
+endif
+ifeq ($(libdir),)
+	libdir=$(prefix)/lib
+endif
 all:
-	g++ -c -fPIC -o halfmk61.o halfmk61.cpp
-	g++ -fPIC -shared -o libhalfmk61.so halfmk61.o
+	$(CXX) -c -fPIC $(CXXFLAGS) -o halfmk61.o halfmk61.cpp
+	$(CXX) -fPIC -shared $(CXXFLAGS) g++ -fPIC -shared -o libhalfmk61.so.1 halfmk61.o
+	ln -s libhalfmk61.so.1 libhalfmk61.so
 install:
-	cp libhalfmk61.so /usr/lib/
-	mkdir /usr/include/halfmk61
-	cp halfmk61.hpp /usr/include/halfmk61
+	install -pDm644 libhalfmk61.so $(DESTDIR)$(libdir)/libhalfmk61.so
+	install -pDm644 libhalfmk61.so.1 $(DESTDIR)$(libdir)/libhalfmk61.so.1
+	install -pDm644 halfmk61.hpp $(DESTDIR)$(prefix)/include/halfmk61/halfmk61.hpp
+clean:
+	rm libhalfmk61.so.1 libhalfmk61.so halfmk61.o

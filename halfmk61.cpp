@@ -1,11 +1,13 @@
-#include "halfmk61.hpp"
-
 /*
+ * libhalfmk61 v 0.2
+ *
  * USSR programmable calculator MK-61 notprogrammable subsystem only
  *				(stack and registers + operations)
  * License: GNU GPLv3
  * Author: Artem Kurashov
  */
+
+#include "halfmk61.hpp"
 
 halfmk61::halfmk61 (int rgrdgv)
 {
